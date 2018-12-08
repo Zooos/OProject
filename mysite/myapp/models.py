@@ -28,6 +28,10 @@ class MyUser(models.Model):
     name = models.CharField(max_length=20)
     gender = models.BooleanField()
     age = models.IntegerField()
-    institution = models.ManyToManyField(Institutions)
+
+
+class UserEvent(models.Model):
+    user = models.ForeignKey(MyUser)
+    event = models.ForeignKey(Event)
 
 
