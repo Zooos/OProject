@@ -2,7 +2,10 @@ from django.db import models
 
 
 class Institutions(models.Model):
+    name = models.CharField(max_length=30)
     description = models.TextField()
+    x_coord = models.TextField()
+    y_coord = models.TextField()
 
 
 class Event(models.Model):
