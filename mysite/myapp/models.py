@@ -19,3 +19,12 @@ class Comments(models.Model):
     institution = models.ForeignKey(Institutions, on_delete=models.CASCADE)
 
 
+class MyUser(models.Model):
+    email = models.EmailField()
+    phone_number = models.CharField(max_length=15)
+    name = models.CharField(max_length=20)
+    gender = models.BooleanField()
+    age = models.IntegerField()
+    institution = models.ManyToManyField(Institutions)
+
+
