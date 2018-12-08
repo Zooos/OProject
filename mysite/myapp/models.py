@@ -20,6 +20,7 @@ class Comments(models.Model):
     text = models.TextField()
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     institution = models.ForeignKey(Institutions, on_delete=models.CASCADE)
+    user = models.ForeignKey('MyUser', on_delete=models.CASCADE)
 
 
 class MyUser(models.Model):
@@ -33,5 +34,11 @@ class MyUser(models.Model):
 class UserEvent(models.Model):
     user = models.ForeignKey(MyUser)
     event = models.ForeignKey(Event)
+
+
+# class UserComment(models.Model):
+#     user = models.ForeignKey(MyUser)
+#     comment = models.ForeignKey(Comments)
+
 
 
